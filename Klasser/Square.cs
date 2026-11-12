@@ -5,20 +5,20 @@ using System.Text;
 
 namespace polymorphismtwo.Klasser
 {
-    // Square ärver från Geometry, precis som Circle.
+    // Square ärver från Geometry
     public class Square : Geometry
     {
-        // Side sparar längden på en sida av kvadraten.
+        // Sparar längden på kvadratens sida
         public double Side { get; set; }
 
-        // Konstruktorn ger sidan ett fast värde när objektet skapas.
+        // Ger sidan ett värde när kvadraten skapas
         public Square()
         {
             Side = 8;
         }
 
-        // Med override får Square sin egen uträkning av Area.
-        // Vi multiplicerar sidan med sig själv eftersom alla sidor är lika långa.
+        // Med override ändrar vi Area till kvadratens uträkning
+        // Vi multiplicerar sidan med sig själv
         public override double Area()
         {
             return Side * Side;

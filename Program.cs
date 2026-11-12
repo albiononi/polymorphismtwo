@@ -8,9 +8,8 @@
     {
         static void Main()
         {
-            // Här skapar vi tre objekt, ett av varje figur.
-            // Vi använder Geometry som typ för alla objektreferenser
-            // eftersom Circle, Square och Rectangle ärver från Geometry.
+            // Skapar tre figurer som alla ärver från Geometry
+            // Vi använder Geometry som typ för att kunna samla dem i samma array
             Geometry[] figures =
             {
             new Circle(),
@@ -18,14 +17,13 @@
             new Rectangle()
         };
 
-            // foreach går igenom figurerna i arrayen en i taget.
-            // figure är den figur som vi arbetar med just nu.
+            // foreach går igenom alla figurer, en i taget
             foreach (Geometry figure in figures)
             {
-                // Här använder vi polymorfism: vi anropar samma Area-metod,
-                // men programmet väljer rätt uträkning beroende på objektets klass.
-                // GetType().Name hämtar figurens klassnamn till utskriften.
-                // 0.## visar högst två decimaler, utan onödiga nollor.
+                // Polymorfism: samma Area-metod används
+                // men varje figur gör sin egen uträkning
+                // GetType().Name hämtar namnet på figuren
+                // 0.## visar högst två decimaler
                 Console.WriteLine($"Area of {figure.GetType().Name}: {figure.Area():0.##}");
             }
         }
